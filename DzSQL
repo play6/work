@@ -35,3 +35,36 @@ CREATE TABLE aniu_qihuo_dasai_player (
   gmt_modified DATETIME DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (id)
 ) ENGINE = INNODB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 COMMENT = '期货大赛选手表' ;
+
+
+USE `tysx_s`;
+
+
+DROP TABLE IF EXISTS `aniu_user_viewing_record`;
+
+CREATE TABLE `aniu_user_viewing_record` (
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_aniu_uid` varchar(50) DEFAULT NULL COMMENT '用户aniu_uid',
+  `aniu_prg_schedule_id` bigint(20) unsigned DEFAULT NULL COMMENT 'aniu_prg_schedule表的主键id',
+  `tougu_aniu_uid` varchar(50) DEFAULT NULL COMMENT '投顾aniu_uid',
+  `platform` varchar(20) DEFAULT NULL COMMENT '平台编码(app,微信等)',
+  `viewing_count` int(10) DEFAULT NULL COMMENT '浏览次数',
+  `start_time` datetime DEFAULT NULL COMMENT '节目开始时间',
+  `end_time` datetime DEFAULT NULL COMMENT '节目结束时间',
+  `prg_subject` varchar(50) DEFAULT NULL COMMENT '课程标题',
+  `user_reg_time` datetime DEFAULT NULL COMMENT '用户注册时间',
+  `prg_code` varchar(20) DEFAULT NULL COMMENT '节目码',
+  `pro_code` varchar(20) DEFAULT NULL COMMENT '产品码',
+  `sale_aniu_uid` varchar(50) DEFAULT NULL COMMENT '销售aniu_uid',
+  `user_nick_name` varchar(50) DEFAULT NULL COMMENT '用户昵称',
+  `first_see_time` datetime DEFAULT NULL COMMENT '用户首次观看该节目时间',
+  `standby1` varchar(40) DEFAULT NULL COMMENT '备用字段1',
+  `standby2` varchar(40) DEFAULT NULL COMMENT '备用字段2',
+  `is_enable` tinyint(1) unsigned DEFAULT NULL COMMENT '是否有效(0 否  1 是)',
+  `gmt_create` datetime DEFAULT NULL COMMENT '创建时间',
+  `gmt_modified` datetime DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 COMMENT='用户观看记录表';
+
+
+
