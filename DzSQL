@@ -1,1 +1,37 @@
 
+DROP TABLE IF EXISTS aniu_qihuo_dasai_paiming;
+CREATE TABLE aniu_qihuo_dasai_paiming (
+  id INT (10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  group_type VARCHAR (10) DEFAULT NULL COMMENT '分组',
+  ranking BIGINT (20) UNSIGNED DEFAULT NULL COMMENT '排名',
+  player VARCHAR (50) DEFAULT NULL COMMENT '选手昵称',
+  score DECIMAL (12, 0) UNSIGNED DEFAULT NULL COMMENT '综合积分',
+  income DECIMAL (16, 2) DEFAULT NULL COMMENT '累计收益额',
+  yield_rate VARCHAR (10) DEFAULT NULL COMMENT '累计收益率',
+  zuida_huiche DECIMAL (12, 2) DEFAULT NULL COMMENT '最大回撤',
+  trade_date DATE DEFAULT NULL COMMENT '交易日期',
+  upload_date DATETIME DEFAULT NULL COMMENT '上传日期',
+  standby1 VARCHAR (20) DEFAULT NULL COMMENT '备用字段1',
+  standby2 VARCHAR (20) DEFAULT NULL COMMENT '备用字段2',
+  is_enable TINYINT (3) UNSIGNED DEFAULT NULL COMMENT '是否有效(0 否  1 是)',
+  gmt_create DATETIME DEFAULT NULL COMMENT '创建时间',
+  gmt_modified DATETIME DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (id)
+) ENGINE = INNODB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 COMMENT = '期货大赛排名表' ;
+
+
+DROP TABLE IF EXISTS aniu_qihuo_dasai_player ;
+
+CREATE TABLE aniu_qihuo_dasai_player (
+  id INT (10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  player VARCHAR (50) DEFAULT NULL COMMENT '选手昵称',
+  aniu_uid VARCHAR (50) DEFAULT NULL,
+  group_type VARCHAR (10) DEFAULT NULL COMMENT '分组',
+  agree TINYINT (3) UNSIGNED DEFAULT NULL COMMENT '是否同意条款(0 否  1 是)',
+  standby1 VARCHAR (20) DEFAULT NULL COMMENT '备用字段1',
+  standby2 VARCHAR (20) DEFAULT NULL COMMENT '备用字段2',
+  is_enable TINYINT (3) UNSIGNED DEFAULT NULL COMMENT '是否有效(0 否  1 是)',
+  gmt_create DATETIME DEFAULT NULL COMMENT '创建时间',
+  gmt_modified DATETIME DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (id)
+) ENGINE = INNODB AUTO_INCREMENT = 1 DEFAULT CHARSET = utf8 COMMENT = '期货大赛选手表' ;
