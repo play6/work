@@ -16,14 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
-/**
- * @version: V1.0
- * @ClassName: SignUtils
- * @Description: 加密工具类
- * @author: hanxie
- * @create: 2020/10/28
- * @Copyright: 上海点掌文化传媒股份有限公司
- */
+
 public class SignUtils {
 
     /**
